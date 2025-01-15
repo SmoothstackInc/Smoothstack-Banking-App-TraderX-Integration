@@ -1,0 +1,14 @@
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 6px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #262626; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f1d76d; /* color of the scroll thumb */
+  background: radial-gradient(circle at 94.02% 88.03%, #f1d76d, #ffdc40c7, #ffac40e5, transparent 100%);
+  border-radius: 6px; /* roundness of the scroll thumb */
+}

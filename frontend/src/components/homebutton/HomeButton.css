@@ -1,0 +1,8 @@
+.home-button {
+  margin-top: 50vh;
+  transition: transform 0.2s;
+}
+
+.home-button:hover {
+  transform: scale(1.1);
+}

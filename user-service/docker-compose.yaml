@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  backend:
+    env_file:
+      - .env
+    build: .
+    ports:
+      - "8085:8085"
+    environment:
+      - DATABASE_URL=jdbc:postgresql://localhost:5432/postgres
+      - SECRET_KEY=${SECRET_KEY}
+    depends_on:
+      - postgres
+
+  postgres:
+    env_file:
+      - .env
+    container_name: user-service-db
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"

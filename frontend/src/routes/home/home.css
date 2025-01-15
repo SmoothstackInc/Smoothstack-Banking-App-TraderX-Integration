@@ -1,0 +1,11 @@
+.home {
+  min-height: 75vh;
+  background-image: url("/images/safe6.png");
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 380px;
+}

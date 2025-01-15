@@ -1,0 +1,22 @@
+.branch {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+.branch-page-container {
+  display: flex;
+}
+
+.spacer {
+  width: 200px;
+}
+
+@media screen and (max-width: 1200px) {
+  .spacer {
+    width: 45px;
+  }
+}

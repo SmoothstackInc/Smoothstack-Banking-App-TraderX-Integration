@@ -1,0 +1,118 @@
+.user-profile {
+  min-height: 75vh;
+  /* background-image: url("/images/safe6.png"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 380px;
+  flex-direction: column;
+  font-family: Lexend;
+}
+
+.user-links {
+  display: flex;
+  margin-top: 4vh;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.submit-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 212%;
+}
+
+.golden-btn.user {
+  width: 10vw;
+  text-wrap: nowrap;
+  min-height: 40px;
+  align-items: center;
+  font-size: large;
+  min-width: max-content;
+  border-radius: 10px;
+}
+
+.user-profile section {
+  color: ivory;
+  font-family: josefin;
+  font-size: 1.5em;
+  margin-bottom: 1vh;
+}
+
+.delete-user-account {
+  display: grid;
+  justify-content: end;
+}
+
+.delete-user-account-button {
+  background-color: var(--primary) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.delete-user-account-button:hover {
+  color: rgb(231, 9, 9);
+  text-shadow: #ff0000 0 0;
+  transition: all 0.1s ease-in-out;
+}
+
+.confirmation-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+}
+
+.confirmation-dialog {
+  display: flex;
+  background-color: #262626;
+  border-top: 5px solid var(--primary);
+  box-shadow: inset 0px 0px 2px 0px var(--primary-light);
+  color: ivory;
+  background-size: 100% 100%;
+  background-position: center;
+  padding: 20px;
+  border-radius: 4px;
+  z-index: 200;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+}
+
+.confirmation-dialog > p {
+  margin: 15px;
+  font-size: larger;
+  text-shadow: 0 0 black;
+  text-align: center;
+}
+
+.inputField.deleteAccount {
+  margin: 12px;
+  min-width: 70%;
+}
+
+.error-details.delete {
+  top: 36%;
+}
+
+@media (max-width: 800px) {
+  .error-details.delete {
+    top: 35%;
+  }
+}
+
+@media (max-width: 400px) {
+  .error-details.delete {
+    top: 30%;
+  }
+}

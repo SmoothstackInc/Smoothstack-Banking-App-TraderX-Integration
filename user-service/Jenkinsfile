@@ -1,0 +1,108 @@
+@Library('github.com/releaseworks/jenkinslib') _
+pipeline {
+    agent any
+    environment {
+        CLUSTER = 'SSB-Cluster'
+        SERVICE = 'users'
+        AWS_DEFAULT_REGION = 'us-east-1'
+        AWS_ACCOUNT_ID = '4711-1278-7100'
+        AWS_ECR_REPO = 'user-service'
+        IMAGE_TAG = "${env.BUILD_NUMBER}"
+        OLD_IMAGE_TAG = "${env.BUILD_NUMBER.toInteger() - 1}"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/dev']],
+                    userRemoteConfigs: [[
+                        credentialsId: 'http-git-creds',
+                        url: 'https://git1.smoothstack.com/cohorts/2023/2023_12_11_java/organizations/the-ledger-legends/userservice.git'
+                    ]]
+                ])
+            }
+        }
+    stage('SonarQube Analysis') {
+      steps {
+        script {
+          def scannerHome = tool 'SonarScanner';
+          withSonarQubeEnv('Sonar') {
+            sh "${scannerHome}/bin/sonar-scanner"
+          }
+        }
+      }
+    }
+     stage("Quality Gate") {
+                steps {
+                    timeout(time: 10, unit: 'MINUTES') {
+                        waitForQualityGate abortPipeline: true
+                        script{
+                            def qg = waitForQualityGate()
+                            if(qg.status != 'OK') {
+                                error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                            }
+                        }
+                    }
+                }
+            }
+     stage('Build Docker Image'){
+            steps{
+              script{
+                  sh "docker build -f Dockerfile -t ${AWS_ECR_REPO}:${IMAGE_TAG} ."
+                  sh "docker tag ${AWS_ECR_REPO}:${IMAGE_TAG} 471112787100.dkr.ecr.us-east-1.amazonaws.com/${AWS_ECR_REPO}:latest"
+              }
+            }
+          }
+
+      stage('Push to ECR') {
+         steps{
+           script{
+               withCredentials([[
+               $class: 'AmazonWebServicesCredentialsBinding',
+               credentialsId: '6c93392c-6fd0-48bf-b70e-2c398fc6a0ef',
+               usernameVariable: 'AWS_ACCESS_KEY_ID',
+               passwordVariable: 'AWS_SECRET_ACCESS_KEY'
+             ]]){
+                sh '''
+                               aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 471112787100.dkr.ecr.us-east-1.amazonaws.com
+
+                               MANIFEST=$(aws ecr batch-get-image --repository-name ${AWS_ECR_REPO} --region us-east-1 --image-ids imageTag=latest --output text --query \'images[].imageManifest\')
+
+                               echo "${MANIFEST}"
+                                   if [ -z "${MANIFEST}" ]; then
+                                         echo "Manifest is empty. Skipping retagging."
+                                     else
+                                         aws ecr put-image --repository-name ${AWS_ECR_REPO} --region ${AWS_DEFAULT_REGION} --image-tag ${OLD_IMAGE_TAG} --image-manifest "${MANIFEST}"
+                                     fi
+
+                               docker push 471112787100.dkr.ecr.us-east-1.amazonaws.com/${AWS_ECR_REPO}:latest
+                               '''
+
+                         }
+                       }
+                     }
+                   }
+
+stage('Deploy to ECS') {
+        steps {
+            withAWS(credentials: '6c93392c-6fd0-48bf-b70e-2c398fc6a0ef', region: 'us-east-1') {
+              script{
+                sh 'aws ecs update-service --cluster $CLUSTER --service $SERVICE --force-new-deployment'
+              }
+            }
+        }
+    }
+         }
+       post {
+             success {
+               script {
+                 sh "docker rmi 471112787100.dkr.ecr.us-east-1.amazonaws.com/${AWS_ECR_REPO}:latest"
+               }
+             }
+             failure {
+               echo 'Push to ECR failed, skipping Docker image cleanup'
+             }
+           }
+       }

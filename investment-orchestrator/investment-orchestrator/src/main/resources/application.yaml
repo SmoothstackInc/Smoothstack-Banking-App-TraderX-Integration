@@ -1,0 +1,56 @@
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  application:
+    name: investment-orchestrator
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    driverClassName: org.postgresql.Driver
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    format_sql: true
+
+server:
+  port: 8061
+  error:
+    include-message: always
+
+springdoc:
+  api-docs:
+    enabled: true
+swagger-ui:
+  enabled: true
+  operationSorter: method
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URL}
+  instance:
+    preferIpAddress: true
+#     hostname: ${HOSTNAME:null}
+
+h2:
+  console:
+    enabled: true
+
+main:
+  allow-bean-definition-overriding: true
+
+logging:
+  level:
+    root: INFO
+
+jwt:
+  secret-key: ${JWT_SECRET_KEY}
+
+api:
+  version: 1.0.0
+
+trade-service:
+  url: ${TRADE_SERVICE_URL:http://localhost:9000/}

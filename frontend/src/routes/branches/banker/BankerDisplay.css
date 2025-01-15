@@ -1,0 +1,57 @@
+.banker-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banker-title {
+  font-size: 2.5rem;
+  color: var(--light);
+  margin-top: 5vh;
+  border-bottom: 3px solid var(--primary);
+  padding: 1vh;
+  margin: 5vh 0 1vh 0;
+}
+
+.banker-filter-toggle {
+  background-color: var(--primary) !important;
+  color: var(--black) !important;
+  margin: 1vh;
+  border: 2px solid var(--black);
+  width: 200px;
+}
+
+.banker-filter-toggler:active {
+  border: 2px solid var(--black);
+}
+
+.banker-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banker-filter-menu {
+  background-color: var(--light);
+}
+
+.banker-filter-menu-item {
+  width: 200px;
+  text-align: center;
+  padding: 5px;
+}
+
+.banker-search-container {
+  width: 200px;
+}
+
+.banker-filter-text-area {
+  background-color: var(--contrast-light);
+  border: 1px solid var(--primary);
+}
+
+.pagination-element {
+  background-color: var(--contrast-light);
+  margin-bottom: 2vh;
+}

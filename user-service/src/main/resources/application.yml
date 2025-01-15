@@ -1,0 +1,51 @@
+jwt:
+  secret-key: ${JWT_SECRET_KEY:UiynOe89DRPIBdPzuyiQ90FN4skkGOkGUO+aqW8ks3c=}
+server:
+  port: ${PORT:8085}
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  application:
+    name: user-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/user_db}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:9557}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+
+logging:
+  level:
+    root: INFO
+    com.smoothstack: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    prometheus:
+      enabled: true

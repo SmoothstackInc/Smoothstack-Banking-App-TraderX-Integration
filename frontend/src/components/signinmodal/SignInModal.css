@@ -1,0 +1,89 @@
+.signin-title {
+    width: 278px;
+    text-align: center;
+    background: linear-gradient(160deg, #a54e07, #b47e11, #fef1a2, #bc881b, #a54e07);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+    font-size: 30px;
+    font-family: 'Lexend';
+  }
+
+.signin-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background: linear-gradient(90deg, #ffb20d00, #bc8b2162, #1a1a1ae7, #1a1a1ae7, #bc8b2162, #ffb20d00); */
+  background: linear-gradient(90deg, #000000d1, #3d3a3a, #1a1a1ae7, #1e1e1ee7, #3d3a3a, #000000d1);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  width: auto;
+  max-width: 500px;
+  max-height: 500px;
+  color: #FFF;
+  line-height: normal;
+  font-family: 'Lexend';
+  
+}
+
+.forgot-password-link{
+  color: ivory;
+}
+
+.forgot-password-link:hover{
+  text-shadow: 0px 0px 1px ivory;
+}
+
+/* Styling for form elements within the modal */
+.signin-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.signin-modal form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-modal label {
+  margin-bottom: 5px;
+  color: #FFF;
+}
+
+.signin-modal input {
+  padding: 0.5em;
+  border-radius: 1.3em;
+  border: 1px solid #ffc982d6;
+  background: #1C1C1C;
+  color: #FFF;
+}
+
+.signin-modal button {
+  border-radius: 1.3em;
+  height: 2.5em;
+  line-height: 2.5em;
+  padding: 0 1em;
+  background-image: linear-gradient(160deg, #a54e07, #b47e11, #fef1a2, #bc881b, #a54e07);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(110, 80, 20, .4), inset 0 -2px 5px 1px rgba(139, 66, 8, 1), inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  border: 1px solid #a55d07;
+  color: #1c1c1c;
+  text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 65%;
+  margin-top: 0.5em;
+}
+
+.signin-modal button:hover {
+  background-size: 150% 150%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(110, 80, 20, .4);
+  border: 1px solid rgba(165, 93, 7, .6);
+  color: rgba(120, 50, 5, .8);
+}

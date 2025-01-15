@@ -1,0 +1,142 @@
+/* REMOVE OR RENAME THIS ONE */
+.MuiInputBase-input {
+  color: ivory !important;
+}
+
+#menu-branchId .MuiPaper-root,
+#menu-startTime .MuiPaper-root,
+#menu-bankerId .MuiPaper-root,
+#menu-serviceType .MuiPaper-root {
+  background-color: var(--contrast-light) !important;
+}
+
+.appointment-modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1vh;
+}
+
+.appointment-modal {
+  height: 100vh;
+}
+
+.appointment-modal-main {
+  background-color: var(--card-background);
+  border-top: 5px solid var(--primary);
+  border-radius: 4px;
+  box-shadow: inset 0 0 2px 0 var(--primary-light);
+}
+
+#appointment-modal-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--title);
+}
+
+.appointment-modal .MuiInputLabel-root {
+  color: var(--contrast-lighter) !important;
+}
+
+.appointment-modal-dialog-content-text {
+  color: var(--contrast-light) !important;
+  margin-bottom: 20px !important;
+}
+
+.appointment-form-element {
+  background-color: var(--contrast-dark);
+  border-radius: 4px;
+}
+
+.starttime-field {
+  width: 25vw;
+}
+
+.appointment-modal-form-control-datepicker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.appointment-submit-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.appointment-success-message {
+  color: var(--contrast-light);
+}
+
+.date-picker {
+  border-radius: var(--bs-border-radius);
+  margin: 1vh;
+  width: 100%;
+  }
+  
+  .appointment-date-picker {
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--contrast-dark) !important;
+}
+
+.react-datepicker,
+.react-datepicker__month-container {
+  width: 50vh;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-datepicker__day-names {
+  display: flex;
+  justify-content: space-around;
+}
+
+.react-datepicker__header {
+  height: 8vh;
+  width: 100%;
+}
+
+.react-datepicker__month {
+  width: 100%;
+  height: 42vh;
+}
+
+.react-datepicker__week {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.react-datepicker__day {
+  width: 14%;
+}
+
+.appointment-modal-open-btn,
+.create-appt-submit-btn,
+.create-appt-cancel-btn {
+  padding: 6px 12px;
+}
+
+.appointment-modal-open-btn:hover {
+  background-color: var(--primary-lighter) !important;
+}
+
+.create-appt-submit-btn:hover {
+  border: 1px solid green !important;
+}
+
+.create-appt-cancel-btn:hover {
+  border: 1px solid var(--error) !important;
+}

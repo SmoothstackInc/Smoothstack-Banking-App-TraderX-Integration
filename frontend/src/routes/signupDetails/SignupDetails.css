@@ -1,0 +1,157 @@
+/* Basic styles */
+.user-container {
+  color: ivory;
+  background-color: var(--card-background);
+  padding: 2vh 3vw;
+  margin: 3vh;
+  border-radius: 4px;
+  box-shadow: inset 0px 0px 2px 0px var(--primary-light);
+  border-top: 5px solid var(--primary);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-width: 400px;
+}
+
+.user-container>form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+  gap: 20px 40px; 
+  align-items: center;
+  position: relative;
+}
+
+@media (max-width: 868px) {
+  .user-container>form {
+    grid-template-columns: 1fr; /* Stacks elements in a single column on smaller screens */
+  }
+
+  .submit-wrapper{
+    max-width: 100%;
+  }
+}
+
+.details-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Lexend;
+  min-height: 75vh;
+}
+
+.inputField .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border: 1px solid transparent; /* Use a transparent border by default */
+  border-bottom: 1px solid var(--primary-light); /* Only the bottom border is colored */
+  border-radius: 4px 4px 0 0;
+}
+
+.inputField .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline,
+.inputField .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  /* Maintain the same box-shadow and border properties on hover and focus */
+  border: 1px solid transparent; /* Keep the transparent border to avoid changing the element size */
+  border-bottom: 1px solid var(--primary); /* Only change the bottom border color */
+}
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 14px;
+  color: ivory !important;
+}
+
+#mui-component-select-secretQuestion{
+  color: ivory;
+}
+
+.inputField {
+  background: var(--contrast-dark);
+  width: -webkit-fill-available;
+  transition: all .2s ease;
+  border-radius: 4px 4px 0 0;
+  color: ivory;
+  width: 275px;
+}
+
+
+.inputField:hover{
+  /* border: 1px solid #ffb300; */
+  transition: all .2s ease;
+  background: #3a3939;
+}
+
+.input-user-container {
+  width: -webkit-fill-available;; 
+  margin-bottom: 8%; 
+}
+
+.edit-user-title{
+  color: var(--title);
+  display: flex;
+  justify-content: left;
+  width: 100%;
+}
+
+.user-container hr{
+  width: calc(100% + 6vw);
+  margin-top: 0;
+  color: ivory;
+}
+
+.label {
+  color: #FFF;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  background-color: #F4D874;
+  color: #1C1C1C;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #e0c060;
+}
+
+.captcha-style {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center; 
+}
+
+.error-details {
+  position: absolute;
+  color: ivory;
+  background: #000000d6;
+  border: 1px solid #d93025;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 101;
+}
+
+#instructions{
+    color: ivory;
+    font-family: josefin;
+    font-size: 1.4em;
+    margin-bottom: 2.5vh;
+}
+
+@media (max-width: 700px) {
+  .input-user-container {
+    margin-bottom: 5%;
+
+  }
+
+  .inputField{
+    padding: 0.3em;
+  }
+
+  .user-container{
+    min-width: 300px;
+  }
+}

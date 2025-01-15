@@ -1,0 +1,66 @@
+@import './components/navigation/Navigation.css';
+@import './components/signupmodal/SignUpModal.css';
+@import './components/signinmodal/SignInModal.css';
+@import './routes/home/home.css';
+@import './css/reset-normalize.css';
+@import './routes/signupDetails/SignupDetails.css';
+@import './routes/forbidden/Forbidden.css';
+@import './routes/userProfile/UserProfile.css';
+@import './components/footer/Footer.css';
+@import './components/navigation/Sidebar.css';
+@import './components/buttons/primary-btn.css';
+@import './components/buttons/secondary-btn.css';
+@import './routes/dashboard/dashboard.css';
+@import './routes/userProfile/PasswordReset.css';
+
+body {
+  margin: 0;
+  font-family: 'Lexend', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--contrast-dark);
+}
+
+html,
+body {
+  height: 100%;
+  color: ivory;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #262626;
+  /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f1d76d;
+  /* color of the sf77e28d2croll thumb */
+  background: linear-gradient(#fbd660, #f77e28d2);
+  border-radius: 6px;
+  /* roundness of the scroll thumb */
+}
+
+:root {
+  --primary-lighter: #fef167;
+  --primary-light: #ffc000;
+  --primary: #eca600;
+  --primary-dark: #fe7a00;
+
+  --contrast-light: #dadada;
+  --contrast: #6f6f6f;
+  --contrast-dark: #3c3c3c;
+  --contrast-darker: #1c1c1c;
+  --card-background: #262626;
+
+  --title: #f4d874;
+  --white: #fff;
+  --black: #000000;
+  --error: rgb(228, 46, 1);
+  --border-radius: 0.3rem;
+  --button-red: #560404;
+}

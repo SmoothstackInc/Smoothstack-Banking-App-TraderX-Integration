@@ -1,0 +1,43 @@
+.confirmation-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  /* Ensure it's above other content */
+}
+
+.confirmation-dialog {
+  background-color: white;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid var(--primary);
+  box-shadow: inset 0px 0px 2px 0px var(--primary-light);
+}
+
+.confirmation-dialog p {
+  margin: 0 0 20px 0;
+}
+
+.confirmation-dialog-button {
+  padding: 0.4em 0.8em;
+  border-radius: 0.3em;
+  background: #1c1c1c;
+  color: ivory;
+  border: 1px solid #ffc64081;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.confirmation-dialog-button:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border: 1px solid #ffc640;
+  color: #ffc640;
+}

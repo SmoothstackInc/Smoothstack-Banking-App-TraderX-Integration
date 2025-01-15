@@ -1,0 +1,67 @@
+@Library('github.com/releaseworks/jenkinslib') _
+pipeline {
+  agent any
+  
+  environment {
+    AWS_DEFAULT_REGION = 'us-east-1'
+    AWS_ACCOUNT_ID = '4711-1278-7100'
+    AWS_ECR_REPO = 'nginx-react'
+    IMAGE_TAG = "${env.BUILD_NUMBER}"
+  }
+  
+  stages {
+
+    stage('Checkout') {
+      steps {
+        checkout scmGit(
+          branches: [[name: '*/main']],
+          userRemoteConfigs: [[
+            credentialsId: '59f16e40-d837-4822-86bd-7734fb9ac915',
+            url: 'https://git1.smoothstack.com/cohorts/2023/2023_12_11_java/organizations/the-ledger-legends/securesentinelbankreactfrontend.git'
+          ]]
+        )
+      }
+    }
+    
+    // stage('Test') {
+    //   steps {
+    //     sh 'npm run test'
+    //   }
+    // }
+    
+    stage('Push to ECR') {
+      steps {
+        withCredentials([[
+          $class: 'AmazonWebServicesCredentialsBinding',
+          credentialsId: '99836ddd-82ef-4a77-aa66-9e11b6808b4c',
+          accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+          secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+        ]]) {
+          sh 'aws ecr-public get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin public.ecr.aws/o9d5t0i3'
+          sh 'docker build -t $AWS_ECR_REPO:$IMAGE_TAG .'
+          sh 'docker tag $AWS_ECR_REPO:$IMAGE_TAG public.ecr.aws/o9d5t0i3/$AWS_ECR_REPO:$IMAGE_TAG'
+          sh 'docker push public.ecr.aws/o9d5t0i3/$AWS_ECR_REPO:$IMAGE_TAG'
+        }
+      }
+    }
+
+    stage('SonarQube Code Quality Analysis') {
+      def scannerHome = tool 'SonarScanner';
+      withSonarQubeEnv() {
+        sh '$scannerHome/bin/ssb-sonarqube-server'
+      }
+    }
+  }
+  
+  post {
+    success {
+      script {
+        sh 'docker rmi $AWS_ECR_REPO:$IMAGE_TAG'
+        sh 'docker rmi $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$AWS_ECR_REPO:$IMAGE_TAG'
+      }
+    }
+    failure {
+      echo 'Push to ECR failed, skipping Docker image cleanup'
+    }
+  }
+}

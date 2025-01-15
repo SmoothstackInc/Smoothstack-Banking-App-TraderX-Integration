@@ -1,0 +1,110 @@
+.loanoffer {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 80vh;
+  max-width: 60vh;
+  background-color: var(--gray);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 5px rgb(0, 0, 0);
+  padding: .75rem;
+}
+
+.loanoffer .top {
+  align-self: flex-start;
+}
+
+.loanoffer h1 {
+  color: gold;
+  margin-bottom: 0.5rem; 
+  color: gold; font-family: 'Helvetica Neue', sans-serif; font-size: 50px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+}
+
+
+
+.loan-list {
+  justify-content: center;
+  overflow-y: auto;
+  max-height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.loanoffer label {
+  color: white;
+  margin-bottom: 0.5rem; 
+}
+ .loanfilter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 5px 5px 5px 5px rgb(0, 0, 0);
+  padding: .75rem;
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+
+
+.loan-list-item {
+  background-color: #555;
+  border: 1px solid #777;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 250px;
+  text-align: center;
+}
+
+.loan-list-item:hover {
+  background-color: #777;
+}
+
+.selected {
+  background-color: #777;
+}
+
+.loan-offers-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loan-offers-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #333;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  height: 200px;
+  width: 400px;
+}
+
+.loan-offers-modal p {
+  color: white;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+}

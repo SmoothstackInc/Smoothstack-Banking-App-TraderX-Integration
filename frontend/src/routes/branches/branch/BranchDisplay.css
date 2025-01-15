@@ -1,0 +1,51 @@
+.branch-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.branch-title {
+  font-size: 2.5rem;
+  color: var(--light);
+  margin-top: 5vh;
+  border-bottom: 3px solid var(--primary);
+  padding: 1vh;
+  margin: 5vh 0 1vh 0;
+}
+
+.branch-filter-toggle {
+  background-color: var(--primary) !important;
+  color: var(--black) !important;
+  margin: 1vh;
+  border: 1px solid var(--black);
+}
+
+.branch-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.branch-filter-toggle {
+  width: 200px;
+}
+
+.branch-filter-menu {
+  background-color: var(--light);
+}
+
+.branch-filter-menu-item {
+  width: 200px;
+  text-align: center;
+  padding: 5px;
+}
+
+.branch-search-container {
+  width: 200px;
+}
+
+.branch-filter-text-area {
+  background-color: var(--light);
+  border: 1px solid var(--primary);
+}

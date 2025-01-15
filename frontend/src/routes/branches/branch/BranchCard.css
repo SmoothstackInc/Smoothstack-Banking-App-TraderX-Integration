@@ -1,0 +1,96 @@
+.branch-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  min-width: 40vw;
+  margin: 3vh 3vh 3vh 5vh;
+  border-top: 5px solid var(--primary);
+}
+
+.branch-card-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.branch-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.branch-card-title {
+  /* border-top: 3px solid var(--primary);
+  border-bottom: 3px solid var(--primary); */
+  text-align: center;
+  width: 100%;
+  color: var(--title);
+}
+
+.branch-profile-row {
+  width: 100%;
+  padding: 1vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.branch-card-info-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.branch-card-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.branch-card-detail {
+  margin-bottom: 2px;
+}
+
+.branch-card-detail-title {
+  text-decoration: underline;
+}
+
+.map-standin {
+  height: 10vh;
+  width: 20vh;
+  background-color: var(--light);
+  color: var(--gray);
+  border-radius: 2vh;
+  margin: 1vh;
+}
+
+/* .branch-bankers-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 4px var(--black);
+} */
+
+.branch-primary-btn {
+  padding: 6px 12px;
+}
+
+.branch-primary-btn:hover {
+  border: 1px solid var(--primary-dark) !important;
+}
+
+
+@media screen and (max-width: 800px) {
+  .branch-card {
+    margin: 5vh 0;
+  }
+}

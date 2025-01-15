@@ -1,0 +1,130 @@
+.banker-appointment-modal {
+  margin-top: 10vh;
+  height: 100vh;
+}
+
+.banker-appointment-modal-main {
+  background-color: var(--contrast-light);
+}
+
+#banker-appointment-modal-title {
+  background-color: var(--gray);
+  color: var(--primary);
+  text-align: center;
+}
+
+.banker-appointment-modal-dialog-content {
+  /* background-color: #8d8b8b; */
+  background-color: var(--lightGray);
+}
+
+/* .banker-appointment-modal-dialog-content {
+  background-color: #8d8b8b;
+  background-color: var(--lightGray);
+} */
+
+.banker-appointment-modal-dialog-content-text {
+  color: var(--light) !important;
+  padding: 2vh;
+  text-align: center;
+}
+
+.banker-appointment-modal-form-control-datepicker {
+  
+}
+
+/* APPOINTMENT DATEPICKER */
+.banker-appointment-modal-dialog-content-container {
+  /* element used in two places, two stylings */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .create-banker-start-time,
+.create-banker-service-type {
+  background-color: var(--light) !important;
+  padding: 1vh !important;
+} */
+
+
+
+.banker-appointment-modal-dialog-content-text,
+.banker-appointment-modal-form-control {
+  margin-bottom: 2vh !important;
+}
+
+
+
+.banker-appointment-modal-form-control-light {
+  background-color: var(--light);
+}
+
+.start-type-select {
+  color: var(--light);
+  background-color: var(--light) !important;
+}
+
+/* 
+.banker-appointment-modal .modal-dialog .modal-content {
+  background-color: var(--gray);
+  color: var(--light);
+  border: var(--bs-border-width) solid var(--primary);
+  border-radius: var(--bs-border-radius);
+}
+
+.banker-appointment-modal .modal-dialog .modal-content .modal-header .btn-close {
+  background-color: var(--light);
+}
+
+.banker-appointment-submit-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.appointment-success-message {
+  min-height: 50vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.date-picker-label {
+  padding-bottom: 10px;
+}
+
+.appointment-date-picker {
+  background-color: var(--light);
+}
+
+.create-banker-actions-container {
+  background-color: var(--gray);
+}
+
+.create-banker-cancel-btn {
+  color: var(--primary) !important;
+}
+
+.create-banker-submit-btn {
+  color: var(--gray) !important;
+  background-color: var(--primary) !important;
+}
+
+.create-banker-actions-container {
+  background-color: var(--gray);
+}
+
+.create-banker-cancel-btn {
+  color: var(--primary) !important;
+}
+
+.create-banker-submit-btn {
+  color: var(--gray) !important;
+  background-color: var(--primary) !important;
+} */

@@ -1,0 +1,72 @@
+.creditoffers {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 80vh;
+  max-width: 60vh;
+  background-color: var(--gray);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 5px rgb(0, 0, 0);
+  padding: .75rem;
+}
+
+.creditoffers .creditfilter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 5px 5px 5px 5px rgb(0, 0, 0);
+  padding: .75rem;
+  margin-bottom: 40px;
+}
+
+.creditfilter label {
+  color: white;
+}
+
+.creditoffers h1 {
+  color: gold; font-family: 'Helvetica Neue', sans-serif; font-size: 50px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-list-item {
+  background-color: #555;
+  border: 1px solid #777;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 250px;
+  text-align: center;
+}
+
+.card-list-item:hover {
+  background-color: #777;
+}
+
+.button-container {
+  margin-top: 10px;
+}
+
+.button-container button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+  background-color: #45a049;
+}
+
